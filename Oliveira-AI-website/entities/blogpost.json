@@ -1,0 +1,62 @@
+{
+  "name": "BlogPost",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Título do post"
+    },
+    "title_en": {
+      "type": "string",
+      "description": "Título em inglês"
+    },
+    "slug": {
+      "type": "string",
+      "description": "URL slug"
+    },
+    "excerpt": {
+      "type": "string",
+      "description": "Resumo do post"
+    },
+    "excerpt_en": {
+      "type": "string",
+      "description": "Resumo em inglês"
+    },
+    "content": {
+      "type": "string",
+      "description": "Conteúdo completo"
+    },
+    "content_en": {
+      "type": "string",
+      "description": "Conteúdo em inglês"
+    },
+    "image_url": {
+      "type": "string",
+      "description": "Imagem de destaque"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "ai_automation",
+        "industry_insights",
+        "case_studies",
+        "tutorials"
+      ],
+      "description": "Categoria do post"
+    },
+    "published": {
+      "type": "boolean",
+      "default": false,
+      "description": "Post publicado"
+    },
+    "featured": {
+      "type": "boolean",
+      "default": false,
+      "description": "Post em destaque"
+    }
+  },
+  "required": [
+    "title",
+    "content"
+  ]
+}

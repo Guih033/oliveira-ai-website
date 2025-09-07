@@ -1,0 +1,199 @@
+{
+  "name": "Lead",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Full name (legacy compatibility with old form)"
+    },
+    "email": {
+      "type": "string",
+      "format": "email",
+      "description": "Email (legacy compatibility)"
+    },
+    "fullName": {
+      "type": "string",
+      "description": "Nome completo / Full name"
+    },
+    "corporateEmail": {
+      "type": "string",
+      "format": "email",
+      "description": "Email corporativo / Corporate email"
+    },
+    "company": {
+      "type": "string",
+      "description": "Empresa / Company"
+    },
+    "companyWebsite": {
+      "type": "string",
+      "description": "Site da empresa / Company website"
+    },
+    "industry": {
+      "type": "string",
+      "enum": [
+        "construction",
+        "residential_services",
+        "restaurants",
+        "supermarkets",
+        "other"
+      ],
+      "description": "Setor / Industry"
+    },
+    "companySize": {
+      "type": "string",
+      "enum": [
+        "1-10",
+        "11-50",
+        "51-200",
+        "201-1k",
+        "1k+"
+      ],
+      "description": "Tamanho da empresa / Company size"
+    },
+    "location": {
+      "type": "string",
+      "description": "Localização / Location"
+    },
+    "role": {
+      "type": "string",
+      "enum": [
+        "ceo_founder",
+        "coo_operations",
+        "cto_it",
+        "marketing_sales",
+        "other"
+      ],
+      "description": "Seu cargo / Your role"
+    },
+    "interestArea": {
+      "type": "string",
+      "enum": [
+        "ai_agents",
+        "workflow_automation",
+        "website_creation",
+        "ai_training"
+      ],
+      "description": "Interesse principal / Main interest"
+    },
+    "estimatedBudget": {
+      "type": "string",
+      "enum": [
+        "lt_10k",
+        "10_30k",
+        "30_50k",
+        "gt_50k"
+      ],
+      "description": "Orçamento estimado / Estimated budget"
+    },
+    "timeline": {
+      "type": "string",
+      "enum": [
+        "0_3",
+        "3_6",
+        "6_12",
+        "gt_12"
+      ],
+      "description": "Quando deseja implementar? / Implementation timeline"
+    },
+    "preferredLanguage": {
+      "type": "string",
+      "enum": [
+        "EN",
+        "PT-BR",
+        "ES"
+      ],
+      "description": "Idioma preferido / Preferred language"
+    },
+    "preferredContact": {
+      "type": "string",
+      "enum": [
+        "phone",
+        "email",
+        "google_meet"
+      ],
+      "description": "Preferência de contato / Preferred contact"
+    },
+    "phone": {
+      "type": "string",
+      "description": "Telefone normalizado E.164 se fornecido"
+    },
+    "challenge": {
+      "type": "string",
+      "description": "Desafio / Challenge"
+    },
+    "consent": {
+      "type": "boolean",
+      "description": "Consentimento para contato"
+    },
+    "utm": {
+      "type": "object",
+      "properties": {
+        "source": {
+          "type": "string"
+        },
+        "medium": {
+          "type": "string"
+        },
+        "campaign": {
+          "type": "string"
+        },
+        "content": {
+          "type": "string"
+        },
+        "gclid": {
+          "type": "string"
+        }
+      }
+    },
+    "context": {
+      "type": "object",
+      "properties": {
+        "referrer": {
+          "type": "string"
+        },
+        "pagePath": {
+          "type": "string"
+        },
+        "timezone": {
+          "type": "string"
+        },
+        "ip_summary": {
+          "type": "string"
+        }
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "new",
+        "contacted",
+        "qualified",
+        "won",
+        "lost"
+      ],
+      "default": "new"
+    },
+    "source": {
+      "type": "string",
+      "description": "Origem do lead (website_contact, etc.)"
+    },
+    "recaptchaScore": {
+      "type": "number",
+      "description": "Pontuação reCAPTCHA v3 se disponível"
+    }
+  },
+  "required": [
+    "fullName",
+    "corporateEmail",
+    "company",
+    "industry",
+    "companySize",
+    "role",
+    "interestArea",
+    "estimatedBudget",
+    "timeline",
+    "preferredLanguage",
+    "challenge",
+    "consent"
+  ]
+}
